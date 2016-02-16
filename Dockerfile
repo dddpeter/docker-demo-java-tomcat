@@ -1,7 +1,6 @@
-FROM cloudcube/tomcat-with-maven:latest
-
+FROM 192.168.99.100:5000/centos6-tomcat8-jdk8-mvn3:v0.2
 ADD pom.xml /tmp/build/
-RUN cd /tmp/build && mvn -q dependency:resolve
+RUN source /root/.bash_profile && cd /tmp/build && mvn -q dependency:resolve
 
 ADD src /tmp/build/src
         #构建应用
