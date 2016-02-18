@@ -10,6 +10,6 @@ RUN source /root/.bash_profile && cd /tmp/build && mvn -q -DskipTests=true packa
         && mv target/*.war $CATALINA_HOME/webapps/ROOT.war \
         #清理编译痕迹
         && cd / && rm -rf /tmp/build
-
+ENTRYPOINT ["bash --login /opt/tomcat-8.0.20/bin/catalina.sh run"]
 
 
